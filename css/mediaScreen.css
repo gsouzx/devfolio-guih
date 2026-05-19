@@ -1,0 +1,166 @@
+/* =============================================
+   GUIH SOUZA PORTFOLIO — mediaScreen.css
+   Responsividade completa
+   ============================================= */
+
+/* ── 1440px ── */
+@media screen and (max-width: 1440px) {
+  .containerHeader { max-width: 1200px; padding: 12px 32px; }
+  .menu-icons ul   { gap: 44px; }
+  .projetosAgrupado { gap: 28px; }
+  .cardProjeto      { width: 340px; }
+  .imagemProjeto    { height: 196px; }
+}
+
+/* ── 1200px ── */
+@media screen and (max-width: 1200px) {
+  .containerHeader { max-width: 100%; padding: 12px 28px; }
+  .menu-icons ul   { gap: 32px; }
+  header svg       { width: 28px; }
+
+  .homeAgrupado    { gap: 40px; }
+  .imagemHome      { width: 340px; }
+
+  .aboutMeAgrupado { gap: 40px; }
+  .aboutMe-img-wrap img { width: 340px; }
+
+  .contatoAgrupado { gap: 40px; }
+  .cardContato     { width: 400px; }
+}
+
+/* ── 1024px ── */
+@media screen and (max-width: 1024px) {
+  /* Header — esconde menu ícones, mostra hamburger */
+  .menu-icons       { display: none; }
+  .button-menu-toggle {
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 1.5px solid var(--borderButton);
+    border-radius: 10px; width: 44px; height: 44px; cursor: pointer;
+    color: var(--strongH); transition: background 0.25s ease;
+  }
+  .button-menu-toggle:hover { background: var(--fundoButton); }
+  .button-menu-toggle svg   { width: 22px; height: auto; color: var(--strongH); }
+
+  /* Overlay */
+  .overlay {
+    display: block; position: fixed; inset: 0; z-index: 998;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .overlay.ativo { opacity: 1; pointer-events: auto; }
+
+  /* Menu mobile dropdown */
+  .menu-toggle {
+    display: block; position: fixed;
+    top: 0; right: -100%; width: 72%; max-width: 300px; height: 100vh;
+    background: var(--corHeader); backdrop-filter: blur(20px);
+    box-shadow: -4px 0 30px rgba(0,0,0,0.4);
+    z-index: 999; padding: 80px 0 40px;
+    transition: right 0.35s cubic-bezier(.4,0,.2,1);
+  }
+  .menu-toggle.ativo { right: 0; }
+  .menu-toggle ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .menu-toggle ul li a {
+    display: block; padding: 16px 28px;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+    font-size: 1.1rem; color: var(--corLetra); text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease;
+  }
+  .menu-toggle ul li a:hover {
+    color: var(--strongO); background: var(--fundoButton);
+    border-left-color: var(--strongO);
+    padding-left: 34px;
+  }
+
+  .projetosAgrupado { gap: 24px; }
+  .cardProjeto      { width: 320px; }
+  .imagemProjeto    { height: 185px; }
+}
+
+/* ── 900px ── */
+@media screen and (max-width: 900px) {
+  /* Hero: stacking */
+  .home         { padding: 80px 24px 60px; }
+  .homeAgrupado { flex-direction: column; gap: 30px; text-align: center; }
+  .imagemHome   { width: 260px; }
+  .iconsHome ul { justify-content: center; gap: 1.4em; }
+  .iconsHome ul svg { width: 56px; }
+  .home-texto   { display: flex; flex-direction: column; align-items: center; }
+  .textoHomeAgrupado { align-items: center; }
+  .home-desc, .home-greeting { text-align: center; }
+
+  /* About: stack */
+  .aboutMeAgrupado  { flex-direction: column; text-align: center; }
+  .aboutMe-texto    { text-align: center; max-width: 100%; }
+  .aboutMe-img-wrap img { width: min(300px, 80vw); }
+
+  /* Contato: stack */
+  .contatoAgrupado { flex-direction: column; }
+  .contato-img-wrap { display: none; }
+  .cardContato { width: 100%; max-width: 480px; }
+
+  /* Projetos */
+  .cardProjeto { width: 100%; max-width: 420px; }
+}
+
+/* ── 768px ── */
+@media screen and (max-width: 768px) {
+  .containerHeader { padding: 12px 20px; }
+  .nome-header     { font-size: 1.4rem; }
+
+  .home    { padding: 70px 20px 60px; }
+  .projetos { padding: 60px 20px; }
+  .tecnologias { padding: 50px 20px; }
+  .aboutMe  { padding: 60px 20px; }
+  .contato  { padding: 60px 20px; }
+  footer    { padding: 20px; }
+
+  .tecnologias ul { gap: 2.4em; }
+  .tecnologias ul svg { width: 62px; }
+
+  .modalProjetosConteudo { padding: 28px 24px; }
+  .modalProjetosConteudo h1 { font-size: 1.6rem; }
+  .buttonModalProjetos, .buttonModalProjetosAgrupado button { padding: 10px 28px; font-size: 0.85rem; }
+
+  .projetosAgrupado { flex-direction: column; align-items: center; }
+  .cardProjeto { width: 100%; max-width: 100%; }
+  .imagemProjeto { height: 200px; }
+}
+
+/* ── 480px ── */
+@media screen and (max-width: 480px) {
+  .nome-header  { font-size: 1.2rem; }
+  .btn-tema     { width: 38px; height: 38px; }
+  .imagemHome   { width: 200px; }
+  .iconsHome ul svg { width: 48px; }
+  .iconsHome ul { gap: 1em; }
+
+  .destaqueHome { font-size: 0.88rem; }
+
+  .tecnologias ul { gap: 1.8em; }
+  .tecnologias ul svg { width: 52px; }
+
+  .cardContato { min-height: 60px; }
+  .cardContato svg { width: 40px; }
+  .cardContato h1 { font-size: 0.88rem; }
+  .cardContato h2 { font-size: 0.76rem; }
+
+  footer img { width: 70px; }
+  footer .footerAgrupado h1 { font-size: 0.88rem; }
+
+  .orb-a { width: 280px; height: 280px; }
+  .orb-b { width: 200px; height: 200px; }
+}
+
+/* ── 360px ── */
+@media screen and (max-width: 360px) {
+  .containerHeader { padding: 10px 14px; }
+  .nome-header { font-size: 1.05rem; }
+  .home { padding: 65px 14px 50px; }
+  .iconsHome ul { gap: 0.7em; }
+  .iconsHome ul svg { width: 42px; }
+}
